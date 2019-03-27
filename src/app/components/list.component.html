@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-sm-2" *ngFor="let item of video">
+        <div class="thumbnail" [routerLink]="['/detail', item.id]">
+            <div class="thumbnail-header">
+                <img [src]="item.poster">
+                <div class="thumbnail-overlay">{{item.duration}}</div>
+            </div>
+            <div class="thumbnail-body">
+                <div class="thumbnail-text">{{item.name}}</div>
+                <div class="thumbnail-metadata">date added: {{item.dateAdd}} </div>
+                <div class="thumbnail-metadata">like: {{item.likes}}</div>
+                <div class="thumbnail-metadata">hitcount: {{item.hitCount}}</div>
+            </div>
+        </div>
+    </div>
+</div>

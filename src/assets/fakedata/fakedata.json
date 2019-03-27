@@ -1,0 +1,45 @@
+[{
+    "id": "1",
+    "poster": "/assets/images/final-group.jpeg",
+    "dateAdd": 12,
+    "duration": 20,
+    "name": "خندوانه",
+    "hitCount": 40,
+    "likes": 40,
+    "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
+    "dislike": 10,
+    "videoSrc": "/assets/files/1.mp4"
+  }, {
+    "id": "2",
+    "poster": "/assets/images/setaresaz.jpg",
+    "dateAdd": 11,
+    "duration": 20,
+    "name": "ستاره ساز",
+    "hitCount": 33,
+    "likes": 30,
+    "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
+    "dislike": 10,
+    "videoSrc": "/assets/files/1.mp4"
+  }, {
+    "id": "3",
+    "poster": "/assets/images/2544.jpg",
+    "dateAdd": 15,
+    "duration": 20,
+    "name": "عصر جدید",
+    "hitCount": 75,
+    "likes": 45,
+    "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
+    "dislike": 10,
+    "videoSrc": "/assets/files/1.mp4"
+  }, {
+    "id": "4",
+    "poster": "/assets/images/15365261649109532-thumbnail-2.jpg",
+    "dateAdd": 20,
+    "duration": 20,
+    "name": "کودک شو",
+    "hitCount": 37,
+    "likes": 10,
+    "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
+    "dislike": 10,
+    "videoSrc": "/assets/files/1.mp4"
+  }]

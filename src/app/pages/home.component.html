@@ -1,0 +1,26 @@
+<div class="tabs">
+    <div class="tab-content">
+        <div class="tab-pane" *ngIf="tabs=='home'">
+            <dateAdded-page></dateAdded-page>
+        </div>
+        <div class="tab-pane" *ngIf="tabs=='favorites'">
+            <favorites-page></favorites-page>
+        </div>
+        <div class="tab-pane" *ngIf="tabs=='viewed'">
+            <viewed-page></viewed-page>
+        </div>
+    </div>
+    <div class="tab-navs">
+        <ul class="nav nav-tab">
+            <li [class.active]="tabs=='home'">
+                <a (click)="tabs='home'">جدیدترین ها</a>
+            </li>
+            <li [class.active]="tabs=='favorites'">
+                <a (click)="tabs='favorites'">محبوب ترین ها</a>
+            </li>
+            <li [class.active]="tabs=='viewed'">
+                <a (click)="tabs='viewed'">پربازدید ترین ها</a>
+            </li>
+        </ul>
+    </div>
+</div>
