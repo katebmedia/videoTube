@@ -1,12 +1,13 @@
+
 <div class="tabs">
     <div class="tab-content">
-        <div class="tab-pane" *ngIf="tabs=='home'">
+        <div class="tab-pane" [hidden]="tabs!='home'">
             <dateAdded-page></dateAdded-page>
         </div>
-        <div class="tab-pane" *ngIf="tabs=='favorites'">
+        <div class="tab-pane" [hidden]="tabs!='favorites'">
             <favorites-page></favorites-page>
         </div>
-        <div class="tab-pane" *ngIf="tabs=='viewed'">
+        <div class="tab-pane" [hidden]="tabs!='viewed'">
             <viewed-page></viewed-page>
         </div>
     </div>

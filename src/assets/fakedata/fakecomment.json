@@ -1,0 +1,42 @@
+[
+  {
+    "id": "01",
+    "id_post": "1",
+    "comment": "چمن ورزشگاه شهید کاظمی در تمرین امروز!",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user1.jpg"
+  },
+  {
+    "id": "02",
+    "id_post": "3",
+    "comment": "فرقی نداره کجای دنیا باشی!",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user2.jpg"
+  },
+  {
+    "id": "03",
+    "id_post": "4",
+    "comment": "تیم ملی امید ایران در سومین دیدار خود در رقابت های مقدماتی المپیک 2020 از ساعت 18:45 امروز به مصاف تیم امید عراق خواهد رفت.",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user3.jpg"
+  },
+  {
+    "id": "04",
+    "id_post": "2",
+    "comment": "طرحی جالب از لوگوی یوونتوس پس از مصدومیت کریس رونالدو",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user4.jpg"
+  },
+  {
+    "id": "05",
+    "id_post": "2",
+    "comment": "نظرسنجی بزرگ سایت نود؛ بهترین دفاع چپ سال ۹۷ را انتخاب کنید",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user5.png"
+  }
+]

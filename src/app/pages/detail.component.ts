@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { video } from '../models/video.model';
+import { video, comment } from '../models/video.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -10,14 +10,17 @@ import { Observable } from 'rxjs';
 })
 export class DetailComponent {
   video: video = new video();
+  comments: Array<comment> = [];
   private _jsonURL = '../../assets/fakedata/fakedata.json';
+  private _jsonCommentURL = '../../assets/fakedata/fakecomment.json';
+  pageId: string;
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {
-    this.getJSON().subscribe(data => {
+    this.getJSON(jsonTypeEnum.data).subscribe(data => {
       this.route.params.subscribe(params => {
-        var id = params['id']
+        this.pageId = params['id']
         data.forEach(item => {
-          if (item.id == id.toString()) {
+          if (item.id == this.pageId.toString()) {
             this.video = {
               id: item.id,
               name: item.name,
@@ -27,15 +30,27 @@ export class DetailComponent {
               hitCount: item.hitCount
             }
           }
-        });;
-      });
+        });
 
+        this.getJSON(jsonTypeEnum.comment).subscribe(data => {
+          data.forEach(item => {
+            if (item.id_post == this.pageId) {
+              this.comments.push(item);
+            }
+          });
+        });
+      });
     });
   }
-  public getJSON(): Observable<any> {
-    return this.http.get(this._jsonURL);
+  public getJSON(value: jsonTypeEnum): Observable<any> {
+    if (value == jsonTypeEnum.data) return this.http.get(this._jsonURL);
+    if (value == jsonTypeEnum.comment) return this.http.get(this._jsonCommentURL);
   }
   ngOnInit() {
 
   }
+}
+export enum jsonTypeEnum {
+  data = "Data",
+  comment = "Comment"
 }

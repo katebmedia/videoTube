@@ -1,5 +1,12 @@
+<div class="toolbar">
+        <div class="logo"></div>
+        <div class="search">
+            <input [(ngModel)]="searchText" type="text">
+        </div>
+        <div class="status"></div>
+    </div>
 <div class="row">
-    <div class="col-sm-2" *ngFor="let item of video">
+    <div class="col-sm-2" *ngFor="let item of video | filter : searchText">
         <div class="thumbnail" [routerLink]="['/detail', item.id]">
             <div class="thumbnail-header">
                 <img [src]="item.poster">
