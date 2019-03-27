@@ -23,7 +23,8 @@ export class DetailComponent {
               name: item.name,
               videoSrc: item.videoSrc,
               poster: item.poster,
-              description: item.description
+              description: item.description,
+              hitCount: item.hitCount
             }
           }
         });;
