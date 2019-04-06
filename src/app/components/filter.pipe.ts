@@ -1,14 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { video } from '../models/video.model';
 @Pipe({
-  name: 'filter'
+    name: 'filterSearch',
+    pure: false
 })
-export class FilterPipe implements PipeTransform {
-  transform(items: any[], searchText: string): any[] {
-    if(!items) return [];
-    if(!searchText) return items;
-searchText = searchText.toLowerCase();
-return items.filter( it => {
-      return it.toLowerCase().includes(searchText);
-    });
-   }
+export class MyFilterPipe implements PipeTransform {
+    transform(items: any[], filter: any): any {
+      var _jsonURL = '../../assets/fakedata/fakedata.json';
+      var videos: Array<video> = [];
+      
+        if (!items || !filter) {
+            return items;
+        }
+        return items.filter(item => item.name.indexOf(filter) !== -1);
+    }
 }

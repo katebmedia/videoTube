@@ -1,18 +1,11 @@
-<div class="toolbar">
-        <div class="logo"></div>
-        <div class="search">
-            <input [(ngModel)]="searchText" type="text">
-        </div>
-        <div class="status"></div>
-    </div>
 <div class="row">
-    <div class="col-sm-2" *ngFor="let item of video | filter : searchText">
-        <div class="thumbnail" [routerLink]="['/detail', item.id]">
-            <div class="thumbnail-header">
+    <div class="col-sm-2" *ngFor="let item of video">
+        <div class="card" [routerLink]="['/detail', item.id]">
+            <div class="card-header">
                 <img [src]="item.poster">
-                <div class="thumbnail-overlay">{{item.duration}}</div>
+                <div class="card-overlay">{{item.duration}}</div>
             </div>
-            <div class="thumbnail-body">
+            <div class="card-body">
                 <div class="thumbnail-text">{{item.name}}</div>
                 <div class="thumbnail-metadata">date added: {{item.dateAdd}} </div>
                 <div class="thumbnail-metadata">like: {{item.likes}}</div>

@@ -16,7 +16,7 @@ import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from 'videogular2/buffering';
-import { FilterPipe } from './components/filter.pipe';
+import { MyFilterPipe } from './components/filter.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     ViewedComponent,
     ListComponent,
     DetailComponent,
-    FilterPipe
+    MyFilterPipe
   ],
   imports: [
     BrowserModule,

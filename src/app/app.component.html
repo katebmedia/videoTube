@@ -1,4 +1,57 @@
-
-<div>
+<div class="toolbar">
+    <div class="container">
+        <div class="logo">
+            <img src="/assets/images/logo/logo.jpg">
+        </div>
+        <div class="status">
+            <div class="status-wrapp status-out" hidden>
+                <a>ورود</a> | <a>ثبت نام</a>
+            </div>
+            <div class="status-wrapp status-in dropdown">
+                <div class="list">
+                    <div class="list-item">
+                        <div class="list-avatar">
+                            <img src="/assets/images/users/avatar.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-menu-wrapp">
+                    <ul class="dropdown-menu">
+                        <li>
+                            <div class="list">
+                                <div class="list-item">
+                                    <div class="list-avatar">
+                                        <img src="/assets/images/users/avatar.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div> -->
+        </div>
+        <div class="search">
+            <input placeholder="جستجو" type="text" class="controls" (input)="onSearchChange($event.target.value)">
+            <ul class="list" *ngIf="searchVideos && searchVideos.length>0">
+                <li class="list-item" *ngFor="let searchVideo of searchVideos">
+                    <div class="list-thumbnail" [routerLink]="['/detail', searchVideo.id]">
+                        <img [src]="searchVideo.poster">
+                    </div>
+                    <div class="list-inner">
+                        <div class="list-wrapper">
+                            <div class="list-label">{{searchVideo.name}}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
     <router-outlet></router-outlet>
 </div>
