@@ -1,22 +1,19 @@
 import { Component } from '@angular/core';
 import { video } from '../models/video.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BaseClass } from '../base-class';
 
 @Component({
   selector: 'favorites-page',
   templateUrl: './favorites.component.html'
 })
-export class FavoritesComponent {
-  private _jsonURL = '../../assets/fakedata/fakedata.json';
+export class FavoritesComponent extends BaseClass {
   videos: Array<video> = [];
-  constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => {
+  constructor(public http: HttpClient) {
+    super(http);
+    this.getJSON('../../assets/fakedata/fakedata.json').subscribe(data => {
       this.videos= data;
     });
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get(this._jsonURL);
-  }
 }

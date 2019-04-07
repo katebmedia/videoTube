@@ -2,21 +2,20 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { video, comment } from '../models/video.model';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BaseClass } from '../base-class';
 
 @Component({
   selector: 'detail-page',
   templateUrl: './detail.component.html'
 })
-export class DetailComponent {
+export class DetailComponent extends BaseClass {
   video: video = new video();
   comments: Array<comment> = [];
-  private _jsonURL = '../../assets/fakedata/fakedata.json';
-  private _jsonCommentURL = '../../assets/fakedata/fakecomment.json';
   pageId: string;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
-    this.getJSON(jsonTypeEnum.data).subscribe(data => {
+  constructor(public route: ActivatedRoute, public http: HttpClient) {
+    super(http);
+    this.getJSON('../../assets/fakedata/fakedata.json').subscribe(data => {
       this.route.params.subscribe(params => {
         this.pageId = params['id']
         data.forEach(item => {
@@ -32,7 +31,7 @@ export class DetailComponent {
           }
         });
 
-        this.getJSON(jsonTypeEnum.comment).subscribe(data => {
+        this.getJSON('../../assets/fakedata/fakecomment.json').subscribe(data => {
           data.forEach(item => {
             if (item.id_post == this.pageId) {
               this.comments.push(item);
@@ -42,15 +41,8 @@ export class DetailComponent {
       });
     });
   }
-  public getJSON(value: jsonTypeEnum): Observable<any> {
-    if (value == jsonTypeEnum.data) return this.http.get(this._jsonURL);
-    if (value == jsonTypeEnum.comment) return this.http.get(this._jsonCommentURL);
-  }
+  
   ngOnInit() {
 
   }
-}
-export enum jsonTypeEnum {
-  data = "Data",
-  comment = "Comment"
 }

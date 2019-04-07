@@ -1,25 +1,23 @@
 import { Component } from '@angular/core';
 import { video } from './models/video.model';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { BaseClass } from './base-class';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  private _jsonURL = '../../assets/fakedata/fakedata.json';
+export class AppComponent extends BaseClass{
   videos: Array<video> = [];
   searchVideos: Array<video> = [];
-  constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => {
+  constructor(public http: HttpClient) {
+    super(http);
+    this.getJSON('../../assets/fakedata/fakedata.json').subscribe(data => {
       this.videos = data;
     });
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get(this._jsonURL);
-  }
+  
   onSearchChange(data:string)
   {
     if(!data)
@@ -30,3 +28,5 @@ export class AppComponent {
     this.searchVideos = this.videos.filter(item => item.name.indexOf(data) !== -1);
   }
 }
+
+

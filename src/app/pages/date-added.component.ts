@@ -3,11 +3,12 @@ import { video } from '../models/video.model';
 import { HttpClient } from '@angular/common/http';
 import { BaseClass } from '../base-class';
 
+
 @Component({
-  selector: 'viewed-page',
-  templateUrl: './viewed.component.html'
+  selector: 'date-added-page',
+  templateUrl: './date-added.component.html'
 })
-export class ViewedComponent extends BaseClass {
+export class DateAddedComponent extends BaseClass {
   videos: Array<video> = [];
   constructor(public http: HttpClient) {
     super(http);

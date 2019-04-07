@@ -9,18 +9,25 @@ import { ViewedComponent } from './pages/viewed.component';
 import { ListComponent } from './components/list.component';
 import { DetailComponent } from './pages/detail.component';
 import { RouterModule, Routes } from '@angular/router';
-import { DateAddedComponent } from './pages/dateAdded.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { VgOverlayPlayModule } from 'videogular2/overlay-play';
 import { VgBufferingModule } from 'videogular2/buffering';
-import { MyFilterPipe } from './components/filter.pipe';
+import { MyFilterPipe } from './pipes/filter.pipe';
+import { closeDirective } from './directives/directives/close';
+import { DateAddedComponent } from './pages/date-added.component';
+import { MyPageComponent } from './pages/my-page.component';
+import { SettingsComponent } from './pages/settings.component';
+import { HelpComponent } from './pages/help.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'detail/:id', component: DetailComponent }
+  { path: 'detail/:id', component: DetailComponent },
+  { path: 'mypage', component: MyPageComponent },
+  { path: 'settings', component: SettingsComponent },
+  { path: 'help', component: HelpComponent }
 ]
 @NgModule({
   declarations: [
@@ -31,7 +38,11 @@ const appRoutes: Routes = [
     ViewedComponent,
     ListComponent,
     DetailComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    closeDirective,
+    MyPageComponent,
+    SettingsComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +55,9 @@ const appRoutes: Routes = [
     VgBufferingModule
   ],
   providers: [],
+  exports: [
+    closeDirective
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { RouterModule }
