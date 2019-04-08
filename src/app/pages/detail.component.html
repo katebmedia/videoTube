@@ -35,10 +35,27 @@
                 <div> {{video.hitCount}}</div>
                 <div> sort by: <a>Top</a> | <a>newest</a></div>
             </div>
+            <div class="comment-box">
+                <div class="list">
+                    <div class="list-item">
+                        <div class="list-avatar">
+                            <img src="/assets/images/users/avatar.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="comment-forms">
+                    <textarea class="comment-placeholder" (input)="onComment($event.target.value)" [(ngModel)]="commentValue">افزودن نظر</textarea>
+                    <div class="comment-forms-footer" [hidden]="showCommentFooter">
+                        <button class="btn btn-primary">افزودن نظر</button>
+                        <button class="btn btn-light" (click)="cancelComment()">انصراف</button>
+                    </div>
+                </div>
+            </div>
             <div class="list" *ngIf="comments && comments.length>0">
                 <div class="list-item" *ngFor="let comment of comments">
                     <div class="list-avatar">
-                        <img [src]="comment.avatar">
+                        <img *ngIf="comment.avatar" [src]="comment.avatar">
+                        <img *ngIf="!comment.avatar" src="/assets/images/users/avatar.jpg">
                     </div>
                     <div class="list-inner">
                         <div class="list-wrapper">

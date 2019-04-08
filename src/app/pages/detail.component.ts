@@ -12,6 +12,8 @@ export class DetailComponent extends BaseClass {
   video: video = new video();
   comments: Array<Comment> = [];
   pageId: string;
+  commentValue: string;
+  showCommentFooter: boolean = true;
 
   constructor(public route: ActivatedRoute, public http: HttpClient) {
     super(http);
@@ -42,8 +44,20 @@ export class DetailComponent extends BaseClass {
       });
     });
   }
-  
-  ngOnInit() {
 
+  ngOnInit() {
+  }
+  onComment() {
+    if (this.commentValue.length > 0) {
+      this.showCommentFooter = false;
+    }
+    if (this.commentValue.length == 0)
+    {
+      this.showCommentFooter = true;
+    }
+  }
+  cancelComment(){
+    this.showCommentFooter = true;
+    this.commentValue = "";
   }
 }

@@ -19,19 +19,14 @@ export class AppComponent extends BaseClass {
     this.getJSON('../../assets/fakedata/fakedata.json').subscribe(data => {
       this.videos = data;
     });
-    let token = localStorage.getItem("token");
-    let username = localStorage.getItem("username");
-    let email = localStorage.getItem("email");
-    let avatar = localStorage.getItem("avatar");
-    this.username = username;
-    this.email = email;
-    this.avatar = avatar;
-    if (token) {
+    let user = this.getCurrentUser();
+    this.username = user.username;
+    this.email = user.email;
+    this.avatar = user.avatar;
+    if (user.token) {
       this.showlogin = false;
     }
   }
-
-
   onSearchChange(data: string) {
     if (!data) {
       this.searchVideos = [];
