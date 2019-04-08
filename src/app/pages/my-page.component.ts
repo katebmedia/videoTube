@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './my-page.component.html'
 })
 export class MyPageComponent {
-  constructor() {
+  constructor(private router: Router) {
+    let token=localStorage.getItem("token");
+    if(!token){
+      this.router.navigate(['/login']);
+    }
+
   }
 }

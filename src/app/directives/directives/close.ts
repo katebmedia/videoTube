@@ -12,7 +12,7 @@ export class closeDirective {
 
     @HostListener('document:click', ['$event.target'])
     public onClick(targetElement: HTMLElement) {
-        if (this._elementRef.nativeElement.classList.contains(close)) {
+        if (this._elementRef.nativeElement.classList.contains(this.close)) {
             this.renderer.removeClass(this._elementRef.nativeElement, this.close)
             return;
         }

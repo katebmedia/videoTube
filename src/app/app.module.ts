@@ -21,13 +21,15 @@ import { DateAddedComponent } from './pages/date-added.component';
 import { MyPageComponent } from './pages/my-page.component';
 import { SettingsComponent } from './pages/settings.component';
 import { HelpComponent } from './pages/help.component';
+import { LoginComponent } from './pages/login.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'detail/:id', component: DetailComponent },
   { path: 'mypage', component: MyPageComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: 'help', component: HelpComponent }
+  { path: 'help', component: HelpComponent },
+  { path: 'login', component: LoginComponent }
 ]
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     closeDirective,
     MyPageComponent,
     SettingsComponent,
-    HelpComponent
+    HelpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

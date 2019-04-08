@@ -4,14 +4,15 @@
             <img src="/assets/images/logo/logo.jpg">
         </div>
         <div class="status">
-            <div class="status-wrapp status-out" hidden>
-                <a>ورود</a> | <a>ثبت نام</a>
+            <div class="status-wrapp status-out" [hidden]="!showlogin">
+                <a routerLink="/login">ورود</a> | <a>ثبت نام</a>
             </div>
-            <div class="status-wrapp status-in dropdown" [close]="'open'">
+            <div class="status-wrapp status-in dropdown" [close]="'open'" [hidden]="showlogin">
                 <div class="list">
                     <div class="list-item">
                         <div class="list-avatar">
-                            <img src="/assets/images/users/avatar.jpg">
+                            <img *ngIf="avatar" [src]="avatar">
+                            <img *ngIf="!avatar" src="/assets/images/users/avatar.jpg">
                         </div>
                     </div>
                 </div>
@@ -20,12 +21,13 @@
                         <div class="list">
                             <div class="list-item">
                                 <div class="list-avatar">
-                                    <img src="/assets/images/users/avatar.jpg">
+                                    <img *ngIf="avatar" [src]="avatar">
+                                    <img *ngIf="!avatar" src="/assets/images/users/avatar.jpg">
                                 </div>
                                 <div class="list-inner">
                                     <div class="list-wrapper">
                                         <div class="list-label">
-                                            <span class="text-title">صالح کاتبی</span>
+                                            <span class="text-title">{{username}}</span>
                                             <span class="text-subtitle">katebmedia@gmail.com</span>
                                         </div>
                                     </div>
@@ -93,7 +95,7 @@
                             </span>
                             <span>ارسال بازخورد</span>
                         </a>
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" (click)="logout()">
                             <span class="icon">
                                 <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false"
                                     class="style-scope yt-icon"

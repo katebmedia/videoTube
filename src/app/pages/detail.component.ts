@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { video, comment } from '../models/video.model';
+import { video, Comment } from '../models/video.model';
 import { HttpClient } from '@angular/common/http';
 import { BaseClass } from '../base-class';
 
@@ -10,7 +10,7 @@ import { BaseClass } from '../base-class';
 })
 export class DetailComponent extends BaseClass {
   video: video = new video();
-  comments: Array<comment> = [];
+  comments: Array<Comment> = [];
   pageId: string;
 
   constructor(public route: ActivatedRoute, public http: HttpClient) {
@@ -35,6 +35,7 @@ export class DetailComponent extends BaseClass {
           data.forEach(item => {
             if (item.id_post == this.pageId) {
               this.comments.push(item);
+              this.comments.sort((a, b) => (b.dateAdd - a.dateAdd));
             }
           });
         });

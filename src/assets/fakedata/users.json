@@ -1,0 +1,16 @@
+[
+  {
+    "username": "saleh",
+    "password":"123123",
+    "email": "katebmedia@gmail.com",
+    "token": "lkjlkjlkjlkjlkjlkjlk",
+    "avatar": "/assets/images/users/user3.jpg"
+  },
+  {
+    "username": "morteza",
+    "password":"65431",
+    "email": "dalil@gmail.com",
+    "token": "eteteetetttttre",
+    "avatar": "/assets/images/users/user2.jpg"
+  }
+]

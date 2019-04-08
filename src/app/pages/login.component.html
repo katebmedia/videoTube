@@ -1,0 +1,15 @@
+<h1>login</h1>
+<div>
+    <div class="form-group">
+        <input class="controls" [(ngModel)]='userName' type="text">
+    </div>
+    <div class="form-group">
+        <input class="controls" [(ngModel)]='userPassword' type="password">
+    </div>
+    <div class="form-group">
+        <button class="btn" (click)="performLogin()">ورود</button>
+    </div>
+    <div class="alert alert-danger" *ngIf="message">
+        {{message}}
+    </div>
+</div>

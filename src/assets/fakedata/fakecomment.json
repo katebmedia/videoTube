@@ -5,7 +5,10 @@
     "comment": "چمن ورزشگاه شهید کاظمی در تمرین امروز!",
     "sender": "katebmedia",
     "email": "katebmedia@gmail.com",
-    "avatar": "/assets/images/users/user1.jpg"
+    "avatar": "/assets/images/users/user1.jpg",
+    "dateAdd": 10,
+    "likes": 10,
+    "dislike": 10
   },
   {
     "id": "02",
@@ -13,7 +16,10 @@
     "comment": "فرقی نداره کجای دنیا باشی!",
     "sender": "katebmedia",
     "email": "katebmedia@gmail.com",
-    "avatar": "/assets/images/users/user2.jpg"
+    "avatar": "/assets/images/users/user2.jpg",
+    "dateAdd": 11,
+    "likes": 11,
+    "dislike": 10
   },
   {
     "id": "03",
@@ -21,7 +27,10 @@
     "comment": "تیم ملی امید ایران در سومین دیدار خود در رقابت های مقدماتی المپیک 2020 از ساعت 18:45 امروز به مصاف تیم امید عراق خواهد رفت.",
     "sender": "katebmedia",
     "email": "katebmedia@gmail.com",
-    "avatar": "/assets/images/users/user3.jpg"
+    "avatar": "/assets/images/users/user3.jpg",
+    "dateAdd": 12,
+    "likes": 10,
+    "dislike": 11
   },
   {
     "id": "04",
@@ -29,7 +38,10 @@
     "comment": "طرحی جالب از لوگوی یوونتوس پس از مصدومیت کریس رونالدو",
     "sender": "katebmedia",
     "email": "katebmedia@gmail.com",
-    "avatar": "/assets/images/users/user4.jpg"
+    "avatar": "/assets/images/users/user4.jpg",
+    "dateAdd": 13,
+    "likes": 15,
+    "dislike": 10
   },
   {
     "id": "05",
@@ -37,6 +49,31 @@
     "comment": "نظرسنجی بزرگ سایت نود؛ بهترین دفاع چپ سال ۹۷ را انتخاب کنید",
     "sender": "katebmedia",
     "email": "katebmedia@gmail.com",
-    "avatar": "/assets/images/users/user5.png"
+    "avatar": "/assets/images/users/user5.png",
+    "dateAdd": 14,
+    "likes": 27,
+    "dislike": 10
+  },
+  {
+    "id": "06",
+    "id_post": "4",
+    "comment": "گاندی ثابت کرد که امکان‌پذیر است کسی برای مردمش مبارزه کند و پیروز شود بدون اینکه حتی یک لحظه احترامِ دنیا را از دست دهد.",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user1.jpg",
+    "dateAdd": 15,
+    "likes": 17,
+    "dislike": 10
+  },
+  {
+    "id": "07",
+    "id_post": "4",
+    "comment": "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد.",
+    "sender": "katebmedia",
+    "email": "katebmedia@gmail.com",
+    "avatar": "/assets/images/users/user2.jpg",
+    "dateAdd": 16,
+    "likes": 10,
+    "dislike": 15
   }
 ]

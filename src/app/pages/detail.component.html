@@ -1,42 +1,56 @@
-<div>
-    <vg-player>
-        <vg-overlay-play></vg-overlay-play>
-        <vg-buffering></vg-buffering>
+<div class="detail-wrapp">
+    <div class="row">
+        <div class="col-sm-8">
+            <vg-player *ngIf="video">
+                <vg-overlay-play></vg-overlay-play>
+                <vg-buffering></vg-buffering>
 
-        <vg-scrub-bar>
-            <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-            <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-        </vg-scrub-bar>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                </vg-scrub-bar>
 
-        <vg-controls>
-            <vg-play-pause></vg-play-pause>
-            <vg-playback-button></vg-playback-button>
+                <vg-controls>
+                    <vg-play-pause></vg-play-pause>
+                    <vg-playback-button></vg-playback-button>
 
-            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+                    <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
 
-            <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+                    <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
 
-            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+                    <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                    <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
 
-            <vg-mute></vg-mute>
-            <vg-volume></vg-volume>
+                    <vg-mute></vg-mute>
+                    <vg-volume></vg-volume>
 
-            <vg-fullscreen></vg-fullscreen>
-        </vg-controls>
-
-        <video [poster]="video.poster" [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
-            <source [src]="video.videoSrc" type="video/mp4">
-        </video>
-    </vg-player>
-    {{video.name}}
-    <div>{{video.description}}</div>
-    <div>{{video.hitCount}}</div>
-    <div class="comments" *ngIf="comments && comments.length>0">
-        <div class="comment-item" *ngFor="let comment of comments">
-            <img style="width: 30px" [src]="comment.avatar">
-            {{comment.sender}}
-            <div>{{comment.comment}}</div>
+                    <vg-fullscreen></vg-fullscreen>
+                </vg-controls>
+                <video [poster]="video.poster" [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
+                    <source [src]="video.videoSrc" type="video/mp4">
+                </video>
+            </vg-player>
+            <h1 class="title">{{video.name}}</h1>
+            <div class="info">{{video.description}}
+                <div> {{video.hitCount}}</div>
+                <div> sort by: <a>Top</a> | <a>newest</a></div>
+            </div>
+            <div class="list" *ngIf="comments && comments.length>0">
+                <div class="list-item" *ngFor="let comment of comments">
+                    <div class="list-avatar">
+                        <img [src]="comment.avatar">
+                    </div>
+                    <div class="list-inner">
+                        <div class="list-wrapper">
+                            <div class="list-label">
+                                <span class="text-author">{{comment.sender}}</span>
+                                <span class="text-subtitle">{{comment.comment}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="col-sm-4"></div>
     </div>
 </div>
