@@ -27,7 +27,8 @@
                                 <div class="list-inner">
                                     <div class="list-wrapper">
                                         <div class="list-label">
-                                            <span class="text-title">{{fullname}}</span>
+                                            <span *ngIf="fullname" class="text-title">{{fullname}}</span>
+                                            <span *ngIf="!fullname" class="text-title">لطفا مشخصات خود را تکمیل نمایید</span>
                                             <span class="text-subtitle">{{username}}</span>
                                         </div>
                                     </div>

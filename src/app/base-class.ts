@@ -25,12 +25,12 @@ export class BaseClass {
   }
   getCurrentUser(): User {
     return {
-      username: localStorage.getItem("username"),
-      token: localStorage.getItem("token"),
-      firstname: localStorage.getItem("firstname"),
-      lastname: localStorage.getItem("lastname"),
-      avatar: localStorage.getItem("avatar"),
-      fullname: localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"),
+      username: localStorage.getItem("username") == 'undefined' ? null : localStorage.getItem("username"),
+      token: localStorage.getItem("token") == 'undefined' ? null : localStorage.getItem("token"),
+      firstname: localStorage.getItem("firstname") == 'undefined' ? null : localStorage.getItem("firstname"),
+      lastname: localStorage.getItem("lastname") == 'undefined' ? null : localStorage.getItem("lastname"),
+      avatar: localStorage.getItem("avatar") == 'undefined' ? null : localStorage.getItem("avatar"),
+      fullname: (localStorage.getItem("firstname") == 'undefined' || localStorage.getItem("lastname") == 'undefined') ? null : localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"),
     };
   }
 
@@ -40,10 +40,26 @@ export class BaseClass {
     if (ls_users)
       users = <User[]>JSON.parse(ls_users);
 
+    user.token = this.token();
     users.push(user);
     localStorage.setItem("Users", JSON.stringify(users));
   }
+  editUser(user: User): User {
+    let ls_users = localStorage.getItem("Users");
+    let users: User[] = [];
+    if (ls_users)
+      users = <User[]>JSON.parse(ls_users)
+    let finded = users.find(x => x.username == user.username)
 
+    if (finded == null)
+      return null;
+
+    finded.firstname = user.firstname;
+    finded.lastname = user.lastname;
+    localStorage.setItem("Users", JSON.stringify(users));
+
+    return finded;
+  }
   login(username: string, password: string): User {
     let ls_users = localStorage.getItem("Users")
     let users: User[] = [];
@@ -55,16 +71,19 @@ export class BaseClass {
     if (finded == null)
       return null;
 
-      
-    finded.token = this.token();
 
-    localStorage.setItem("token", finded.token);
-    localStorage.setItem("username", finded.username);
-    localStorage.setItem("firstname", finded.firstname);
-    localStorage.setItem("lastname", finded.lastname);
-    localStorage.setItem("avatar", finded.avatar);
+    this.setCurrentUser(finded);
+
 
     return finded;
+  }
+
+  setCurrentUser(user: User) {
+    localStorage.setItem("token", user.token);
+    localStorage.setItem("username", user.username);
+    localStorage.setItem("firstname", user.firstname);
+    localStorage.setItem("lastname", user.lastname);
+    localStorage.setItem("avatar", user.avatar);
   }
 
   rand() {

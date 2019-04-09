@@ -22,6 +22,7 @@ export class AppComponent extends BaseClass {
       this.videos = data;
     });
     let user = this.getCurrentUser();
+    if(!user) return;
     this.username = user.username;
     this.firstname = user.firstname;
     this.lastname = user.lastname;
@@ -43,7 +44,6 @@ export class AppComponent extends BaseClass {
     localStorage.removeItem("username");
     localStorage.removeItem("firstname");
     localStorage.removeItem("lastname");
-    localStorage.removeItem("email");
     localStorage.removeItem("avatar");
     window.location.href = "/"
   }
