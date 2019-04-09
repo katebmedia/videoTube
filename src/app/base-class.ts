@@ -8,8 +8,10 @@ export class BaseClass {
   //../../assets/fakedata/users.json
 
   username: string;
-  email: string;
+  firstname: string;
+  lastname: string;
   avatar: string;
+  fullname: string;
   constructor(public http: HttpClient) {
   }
   public getJSON(url: string): Observable<any> {
@@ -25,8 +27,52 @@ export class BaseClass {
     return {
       username: localStorage.getItem("username"),
       token: localStorage.getItem("token"),
-      email:localStorage.getItem("email"),
-      avatar: localStorage.getItem("avatar")
+      firstname: localStorage.getItem("firstname"),
+      lastname: localStorage.getItem("lastname"),
+      avatar: localStorage.getItem("avatar"),
+      fullname: localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"),
     };
   }
+
+  addUser(user: User) {
+    let ls_users = localStorage.getItem("Users")
+    let users: User[] = [];
+    if (ls_users)
+      users = <User[]>JSON.parse(ls_users);
+
+    users.push(user);
+    localStorage.setItem("Users", JSON.stringify(users));
+  }
+
+  login(username: string, password: string): User {
+    let ls_users = localStorage.getItem("Users")
+    let users: User[] = [];
+    if (ls_users)
+      users = <User[]>JSON.parse(ls_users);
+
+    let finded = users.find(x => x.username == username && x.password == password)
+
+    if (finded == null)
+      return null;
+
+      
+    finded.token = this.token();
+
+    localStorage.setItem("token", finded.token);
+    localStorage.setItem("username", finded.username);
+    localStorage.setItem("firstname", finded.firstname);
+    localStorage.setItem("lastname", finded.lastname);
+    localStorage.setItem("avatar", finded.avatar);
+
+    return finded;
+  }
+
+  rand() {
+    return Math.random().toString(36).substr(2); // remove `0.`
+  };
+
+  token() {
+    return this.rand() + this.rand(); // to make it longer
+  };
+
 }

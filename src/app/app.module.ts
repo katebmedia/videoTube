@@ -22,6 +22,7 @@ import { MyPageComponent } from './pages/my-page.component';
 import { SettingsComponent } from './pages/settings.component';
 import { HelpComponent } from './pages/help.component';
 import { LoginComponent } from './pages/login.component';
+import { RegisterComponent } from './pages/register.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
   { path: 'mypage', component: MyPageComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'help', component: HelpComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent }
 ]
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     MyPageComponent,
     SettingsComponent,
     HelpComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

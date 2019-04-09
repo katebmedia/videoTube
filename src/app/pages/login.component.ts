@@ -18,21 +18,12 @@ export class LoginComponent extends BaseClass {
 
   }
   performLogin() {
-    this.getJSON('../../assets/fakedata/users.json').subscribe((data: Array<User>) => {
-      data.forEach(item => {
-        if (item.username == this.userName && item.password == this.userPassword) {
-          localStorage.setItem("token", item.token);
-          localStorage.setItem("username", item.username);
-          localStorage.setItem("email", item.email);
-          localStorage.setItem("avatar", item.avatar);
-          // this.router.navigate(['/mypage']);
-          window.location.href = "/mypage"
-
-        } else {
-          this.message = "نام کاربری یا رمز عبور اشتباه است."
-        }
-      });
-    });
-
+    let user = this.login(this.userName, this.userPassword)
+    if (user == null){
+      this.message = "نام کاربری یا رمز عبور اشتباه است.";
+      return;
+    } 
+   
+    window.location.href = "/mypage"
   }
 }

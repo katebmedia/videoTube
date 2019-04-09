@@ -5,7 +5,7 @@
         </div>
         <div class="status">
             <div class="status-wrapp status-out" [hidden]="!showlogin">
-                <a routerLink="/login">ورود</a> | <a>ثبت نام</a>
+                <a routerLink="/login">ورود</a> | <a routerLink="/register">ثبت نام</a>
             </div>
             <div class="status-wrapp status-in dropdown" [close]="'open'" [hidden]="showlogin">
                 <div class="list">
@@ -27,8 +27,8 @@
                                 <div class="list-inner">
                                     <div class="list-wrapper">
                                         <div class="list-label">
-                                            <span class="text-title">{{username}}</span>
-                                            <span class="text-subtitle">katebmedia@gmail.com</span>
+                                            <span class="text-title">{{fullname}}</span>
+                                            <span class="text-subtitle">{{username}}</span>
                                         </div>
                                     </div>
                                 </div>

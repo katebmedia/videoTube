@@ -1,0 +1,15 @@
+<h1>register</h1>
+<div>
+    <div class="form-group">
+        <input placeholder="ایمیل" class="controls" [(ngModel)]='userName' type="text">
+    </div>
+    <div class="form-group">
+        <input placeholder="رمز عبور" class="controls" [(ngModel)]='userPassword' type="password">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="performRegister()">ثبت نام</button>
+    </div>
+    <div class="alert alert-danger" *ngIf="message">
+        {{message}}
+    </div>
+</div>

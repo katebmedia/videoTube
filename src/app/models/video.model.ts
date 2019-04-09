@@ -24,7 +24,9 @@ export class Comment {
 export class User {
     username?: string;
     password?: string;
-    email?: string;
     token?: string;
     avatar?: string;
+    firstname?: string;
+    lastname?: string;
+    fullname?: string;
 }

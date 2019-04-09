@@ -12,8 +12,10 @@ export class AppComponent extends BaseClass {
   searchVideos: Array<video> = [];
   showlogin: boolean = true;
   username: string;
-  email: string;
+  firstname: string;
+  lastname: string;
   avatar: string;
+  fullname: string;
   constructor(public http: HttpClient) {
     super(http);
     this.getJSON('../../assets/fakedata/fakedata.json').subscribe(data => {
@@ -21,8 +23,10 @@ export class AppComponent extends BaseClass {
     });
     let user = this.getCurrentUser();
     this.username = user.username;
-    this.email = user.email;
+    this.firstname = user.firstname;
+    this.lastname = user.lastname;
     this.avatar = user.avatar;
+    this.fullname = user.fullname;
     if (user.token) {
       this.showlogin = false;
     }
@@ -37,6 +41,8 @@ export class AppComponent extends BaseClass {
   logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("lastname");
     localStorage.removeItem("email");
     localStorage.removeItem("avatar");
     window.location.href = "/"

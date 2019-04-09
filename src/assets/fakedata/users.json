@@ -1,13 +1,17 @@
 [
   {
-    "username": "saleh",
+    "username": "katebmedia@gmail.com",
+    "firstname": "saleh",
+    "lastname": "katebi",
     "password":"123123",
     "email": "katebmedia@gmail.com",
     "token": "lkjlkjlkjlkjlkjlkjlk",
     "avatar": "/assets/images/users/user3.jpg"
   },
   {
-    "username": "morteza",
+    "username": "dalil@gmail.com",
+    "firstname": "morteza",
+    "lastname": "dalil",
     "password":"65431",
     "email": "dalil@gmail.com",
     "token": "eteteetetttttre",
