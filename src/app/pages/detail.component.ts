@@ -14,6 +14,7 @@ export class DetailComponent extends BaseClass {
   pageId: string;
   commentValue: string;
   showCommentFooter: boolean = true;
+  islike: boolean = false;
 
   constructor(public route: ActivatedRoute, public http: HttpClient) {
     super(http);
@@ -44,20 +45,21 @@ export class DetailComponent extends BaseClass {
       });
     });
   }
-
-  ngOnInit() {
-  }
   onComment() {
     if (this.commentValue.length > 0) {
       this.showCommentFooter = false;
     }
-    if (this.commentValue.length == 0)
-    {
+    if (this.commentValue.length == 0) {
       this.showCommentFooter = true;
     }
   }
-  cancelComment(){
+  cancelComment() {
     this.showCommentFooter = true;
     this.commentValue = "";
+  }
+  like() {
+    if (this.isLogin) {
+      this.islike = true;
+    }
   }
 }

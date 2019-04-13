@@ -1,1 +1,13 @@
 <h1>settings</h1>
+<div>
+    <div class="form-group">
+        <input placeholder="نام" class="controls" [(ngModel)]='firstName' type="text">
+    </div>
+    <div class="form-group">
+        <input placeholder="نام خانوادگی" class="controls" [(ngModel)]='lastName' type="text">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="completeLogin()">تکمیل ثبت نام</button>
+    </div>
+    <div *ngIf="message" class="alert alert-{{type}}">{{message}}</div>
+</div>

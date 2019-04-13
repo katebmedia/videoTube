@@ -613,7 +613,7 @@ img {
 }
 
 .nav-tab>li>a {
-  padding: 8px 16px;
+  padding: 8px 10px;
   color: #666;
 }
 
@@ -772,7 +772,7 @@ a {
 }
 
 .search {
-  width: 200px;
+  width: 170px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 7px;
@@ -845,6 +845,7 @@ a {
   border: 1px solid rgba(0, 0, 0, .125);
   border-radius: .25rem;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 
 .card-header {
@@ -1198,6 +1199,12 @@ a.dropdown-item {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }
 
 .comment-box {

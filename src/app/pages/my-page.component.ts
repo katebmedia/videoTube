@@ -19,13 +19,9 @@ export class MyPageComponent extends BaseClass {
     }
 
   }
-  completeLogin() {
+  ngOnInit(){
     let user = this.getCurrentUser();
-    let completedUser=this.editUser({
-      username: user.username,
-      firstname: this.firstName,
-      lastname: this.lastName
-    })
-    this.setCurrentUser(completedUser);
+    this.firstName = user.firstname;
+    this.lastName = user.lastname;
   }
 }

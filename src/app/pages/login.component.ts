@@ -24,6 +24,6 @@ export class LoginComponent extends BaseClass {
       return;
     } 
    
-    window.location.href = "/mypage"
+    window.location.href = "/settings"
   }
 }

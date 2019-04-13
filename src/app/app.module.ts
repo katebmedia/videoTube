@@ -23,6 +23,7 @@ import { SettingsComponent } from './pages/settings.component';
 import { HelpComponent } from './pages/help.component';
 import { LoginComponent } from './pages/login.component';
 import { RegisterComponent } from './pages/register.component';
+import {AutoLogoutService} from './services/auto-logout.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -60,7 +61,9 @@ const appRoutes: Routes = [
     VgOverlayPlayModule,
     VgBufferingModule
   ],
-  providers: [],
+  providers: [
+    AutoLogoutService
+  ],
   exports: [
     closeDirective
   ],

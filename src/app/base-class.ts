@@ -86,6 +86,22 @@ export class BaseClass {
     localStorage.setItem("avatar", user.avatar);
   }
 
+  logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    localStorage.removeItem("firstname");
+    localStorage.removeItem("lastname");
+    localStorage.removeItem("avatar");
+    window.location.href = "/"
+  }
+  isLogin(): boolean {
+    let user = this.getCurrentUser();
+
+    if (user.token) {
+      return true
+    }
+    return false;
+  }
   rand() {
     return Math.random().toString(36).substr(2); // remove `0.`
   };
